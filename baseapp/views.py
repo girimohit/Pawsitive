@@ -61,3 +61,8 @@ def login_user(request):
             return render(request, "auth/login.html", {"error": "Invalid credentials"})
 
     return render(request, "auth/login.html")
+
+
+def logout_user(request):
+    logout(request)
+    return redirect("baseapp:HomePage")
