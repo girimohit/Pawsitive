@@ -56,7 +56,6 @@
     }
 
     #result {
-        display: none;
         margin-top: 20px;
         padding: 10px;
         border: 1px solid #ccc;
@@ -69,19 +68,22 @@
 {% block body %}
 <div class="calculator">
     <h2>Get Your Pet's Health</h2>
-    <form action="submit.php" method="post">
+    <form action="{% url 'baseapp:get_pet_health' %}" method="post">
+        {% csrf_token %}
         <label for="logID">LogID:</label><br>
-        <input type="text" id="logID" name="logID"><br>
+        <input type="number" id="logID" name="logID"><br>
         <label for="petID">PetID:</label><br>
-        <input type="text" id="petID" name="petID"><br>
+        <input type="number" id="petID" name="petID"><br>
         <label for="petName">Pet Name:</label><br>
         <input type="text" id="petName" name="petName"><br><br>
-        <button type=button value="Submit">Check Status</button>
+        <button type="submit" value="Submit">Check Status</button>
     </form>
+
+    {% if pet %}
     <div id="result">
-        <h2>Future Money Value Adjusted for Inflation</h2>
-        <p id="futureValue"></p>
+        {{ pet.Health_Status }}
     </div>
+    {% endif %}
 </div>
 {% endblock %}
 

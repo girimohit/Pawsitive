@@ -25,7 +25,7 @@
         <select class="dropbtn" onchange="navigateToPage(this.value)">
             <option value="" disabled selected>Check</option>
             <option value="{% url 'baseapp:get_pet_health' %}">Pet Health</option>
-            <option value="">Adoption Request Status</option>
+            <option value="{% url 'baseapp:pet_adoption_status' %}">Adoption Request Status</option>
         </select>
 
         <select class="dropbtn" onchange="navigateToPage(this.value)" name="DebtManager" id="debtmanager">
