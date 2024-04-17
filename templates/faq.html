@@ -1,0 +1,306 @@
+{% extends "base.html" %} 
+
+{% load static %} 
+
+{% block title %} FAQs {% endblock %} 
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/faq.css' %}">
+{% endblock %}
+{% block body %}
+<div class="faq-background">
+    <div class="faq-container">
+        <img class="faq-trn-logo" src="{% static 'images/trn_logo.png' %}" alt="" />
+        <h1><strong>Frequently Asked Questions</strong></h1>
+        <h3>
+            Here is everything you ever wanted.
+        </h3>
+    </div>
+</div>
+
+<div class="faq-items">
+    <div class="faq-container">
+        <div class="faq-item">
+            <h2 class="question">What is the problem you are looking to solve?</h2>
+            <div class="answer">
+                <p>
+                    Despite a global aid budget of over 140 billion USD annually, much of this money never actually
+                    reaches local organisations, let alone the communities they serve. 95% of US and 90% of UK´s
+                    Official Development Assistance (ODA) contracts are awarded within the donor countries themselves.
+                    Only 1.2-3%of global humanitarian aid go to local or national organisations. Meanwhile
+                    intermediaries take significant overheads, often calculated at 15% but going upwards of 40%, to
+                    implement themselves from Global Minority countries (often referred to as the Global North),
+                    building large international, bureaucratic structures to do so, or even just for redistribution to
+                    smaller, local organisations. Local grassroots are often not trusted to handle international aid
+                    funds effectively beyond immediate programmatic costs. As a result, the actors doing the most
+                    important, immediate work with affected communities often lack the core operating funding they need
+                    to work effectively, efficiently and sustainably. This ultimately results in “so-called”
+                    beneficiaries not receiving the support they need. In the global aid & philanthropy sector we thus
+                    seek to tackle: Financial Inequity: Financial imbalances between donors and grassroots. Meaning only
+                    1.2% of global humanitarian aid goes directly to local organisations Low Effectiveness: Limited
+                    access to core and flexible funding prevents grassroots from sustainable implementation in their
+                    community’s best interest Power Imbalance: Prioritisation and decision making power are still too
+                    often held by donors, rather than local actors and their communities
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <h2 class="question">How do you define grassroots?</h2>
+            <div class="answer">
+                <p>
+                    TrustRoots defines grassroots, as small to medium sized movements, groups or organisations, directly
+                    embedded with the communities they serve. Whilst we don’t limit the number of employees, we believe
+                    the following criteria are important: Community-based: Grassroots organisations are rooted in local
+                    communities and are formed by individuals who are directly affected by a particular issue or cause.
+                    The organisation's strength and support come from the members of a community who share common
+                    concerns and goals. Bottom-up approach: Decision-making and leadership in the organisation is
+                    inclusive and emerges from the grassroots level rather than being imposed from a central authority.
+                    Focus on local issues: Grassroots organisations address issues that are relevant to the community or
+                    specific groups of people. Independence: Grassroots organisations operate independently of larger
+                    institutions or governmental bodies, allowing them to maintain a degree of autonomy and
+                    responsiveness to local needs
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <h2 class="question">Do I have to pay to have my grassroots organisation featured on TrustRoots?</h2>
+            <div class="answer">
+                <p>No, TrustRoots is completely free of charge for grassroots organisations.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <h2 class="question">Where does the TrustRoots network of grassroots come from?</h2>
+            <div class="answer">
+                <p>
+                    We are an open network, available for grassroots organisations from across Global Majority
+                    Countries. Based on our existing networks and experience, our pilot is currently focused on India,
+                    Kenya and Tanzania. However we are very open to feature grassroots from additional countries, as we
+                    progress. The network initially grew from our existing networks, as well as the networks of our
+                    partner organisations Athari Group and Amani Institute. Beyond that, we work with independent
+                    ambassadors who are based in the respective countries and reach out to relevant local grassroots
+                    actors.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <h2 class="question">How does your vetting process work?</h2>
+            <div class="answer">
+                <p>
+                    TrustRoots vetting is ensured through a network of independent ambassadors and expert reviewers.
+                    Ambassadors from the respective countries are the first point of contact, verifying the existence
+                    and reputation of the organisation. To set up a profile on TrustRoots grassroots are required to
+                    provide baseline documents and links, which are then reviewed by experts from the development
+                    sector. We are not aiming to be exclusive or comprehensive in our presentation of organisations, but
+                    rather use the review as an opportunity to support organisations to improve their profile and
+                    visibility. Instead, our focus in vetting and due diligence lies in the reviews and vetting of the
+                    community members themselves. Just like with booking.com or airbnb - what we believe counts most are
+                    the voices by people who the grassroots seeks to service. Beyond that, each donor or funder is
+                    expected to review the organisations in full based on their own due diligence processes.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <h2 class="question">What are the criteria for joining TrustRoots?</h2>
+            <div class="answer">
+                <p>
+                    To be represented on TrustRoots your organisation should be community-based, have a bottom-up
+                    approach, focus on local issues, and be independent. In the registration process you will be asked
+                    to provide the following information: Number of community members you support Your mission, vision,
+                    values and types of activities Proof of at least two activities Examples of how you identify your
+                    communities needs. Minimum one community member review Contact details Registration certificates are
+                    requested but not required. We recommend you provide proof/reasoning for why you are not registered
+                    should these not be available
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <h2 class="question">Who is behind TrustRoots?</h2>
+            <div class="answer">
+                <p>
+                    TrustRoots was started by Pratiksha Jawanjale and Jey Wegner, two experienced development
+                    professionals who met during their post-graduate diploma in Social Innovation Management at Amani
+                    Institute. Both entered the program asking why the so-called development sector was ineffective in
+                    creating changes - and a bond was struck. In 2021 they founded TrustRoots, a project aiming at
+                    promoting and facilitating trust-based partnerships between funders and grassroots organisations.
+                    Since 2022 we are incredibly fortunate to have the support of our advisor David Raper - a social
+                    impact leader with experience in governments, nonprofits and corporations. David is the former
+                    director of CSR at IBM, a former BCG Senior Associate, holds MPA from Harvard Kennedy School and has
+                    been invaluable in providing critical feedback to TrustRoots every step of the way. Since January
+                    2024, we are also grateful for the invaluable support of
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <h2 class="question">What is your theory of change?</h2>
+            <div class="answer">
+                <p>
+                    At TrustRoots we believe that if we create a trust-focused partnership platform for grassroots
+                    visibility and peer-review, then donors are more likely to trust the organisations. If there is more
+                    trust in the partnerships, small grassroots across Global Majority countries will have easier access
+                    to flexible funding opportunities. If grassroots have access to flexible funding opportunities then
+                    they will deliver effective, impactful & sustainable programs and have the ability to build strong &
+                    resilient organisations. We believe that our unique, data-driven, peer-review model, focused on
+                    lived-experiences of the impact organisations will facilitate trust based partnerships. In addition
+                    we will of course look to facilitate this mindset through partnering with and supporting existing
+                    advocacy efforts, as well as providing peer-learning and collaboration opportunities amongst
+                    grassroots. The platform will help donors move beyond tools such as feedback surveys or site visits
+                    and lean into the work of discovering more effective ways to deeply listen to the needs of the
+                    communities they work with.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <h2 class="question">What is your definition of trust?</h2>
+            <div class="answer">
+                <p>
+                    The Oxford dictionary defines trust as: “the firm belief in the reliability, truth, or ability of
+                    someone or something - as well as the acceptance of the truth of a statement without evidence or
+                    investigation”. This resonates with our vision and mission, and at the same time shows: Trust is
+                    vital in both the grassroots-donor, but also grassroots-community relationships, to ensure the work
+                    can be effective. We believe building trust takes time. Intentionally creating time for difficult
+                    conversations about power, privilege, and equity on a regular basis and being open to new
+                    possibilities and transformation, even when they are difficult or have potential risks, are
+                    necessary to create a trust-oriented culture. TrustRoots exists to challenge existing power
+                    inequities between donors and grassroots, and foster more trust-based partnerships that centre on
+                    the feedback and trust of communities, rather than formalised due diligence processes. This will
+                    allow aid to be based on specific needs of culture and place, and help inform opportunities to
+                    connect more deeply with communities and thus make sure their work is more sustainable and effective
+                    - as well as inherently equitable.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <h2 class="question">How does TrustRoots sustain itself?</h2>
+            <div class="answer">
+                <p>
+                    We are currently largely volunteer led, working with our own finances and funding from the Athari
+                    Group Accelerator for our beta version. To fully build out our digital product, optimise our
+                    outreach strategy, provide significant value to grassroots and fairly compensate ambassadors in the
+                    focus countries - we are constantly on the look-out for additional funding and non-monetary support
+                    opportunities, as well as testing additional revenue opportunities. If you have an idea, please do
+                    reach out: info@trustrootsnetwork.org
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <h2 class="question">How can I support TrustRoots?</h2>
+            <div class="answer">
+                <p>
+                    We are always looking for support to build and maintain TrustRoots. If you do not have the necessary
+                    finances, your time and expertise would also be invaluable. We are looking for support in these
+                    three areas - go to the homepage to sign up: Ambassadors: Ambassadors representatives from each
+                    country that are responsible for grassroots outreach and onboarding in their region/country.
+                    Depending on their additional skills and background, as well as availability, they may also support
+                    translation, peer-learning/advocacy session support and/or marketing. For this we are looking for
+                    people who have in-depth knowledge of and a network within local grassroots organisations, are
+                    value-driven individuals with a thorough understanding of or interest in acquiring knowledge in
+                    grassroots needs and local compliance requirements. In return we seek to offer certified and
+                    accompanied work experience for an international organisation, travel and data reimbursement where
+                    possible, the possibility to connect with and learn from inspiring grassroots founders, and access
+                    to international donor networks. Expert reviewers Expert reviewers are qualified professionals from
+                    the development space, who are seeking to contribute to lasting change in the sector. Ideally, they
+                    would have partnership, due diligence and/or evaluation experience - with a power-sensitive mindset
+                    and willingness to learn from ambassadors and grassroots alike. There is a strong preference for
+                    reviewers from Global Majority countries - with engagement time fully flexible. In return, we look
+                    to offer an opportunity to contribute to a power shift within the sector, gain experience
+                    understanding the needs and contributions of various grassroots organisations across the globe, as
+                    well as a certified volunteering certificate.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <h2 class="question">My country isn’t represented on TrustRoots - how can it get started there?</h2>
+            <div class="answer">
+                <p>
+                    We started in India, Tanzania and Kenya because we have some combined experience in those places.
+                    However, if you have a network or interest in a certain country and would like to see grassroots
+                    from there represented on TrustRoots - we would love to hear from you. Just sign up via the
+                    ambassador outreach form and let us know where you would like to get started. We will provide you
+                    with all the outreach and communication content you need and look forward to getting to know
+                    grassroots from across the world together with you.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <h2 class="question">How do you seek to guarantee reliable reviews from communities?</h2>
+            <div class="answer">
+                <p>
+                    Our ambassadors and early-onboarded grassroots will be trained on how best to collect reviews from
+                    communities. These can be collected in any format and should focus on stories and the lived
+                    experiences of communities, rather than externally defined indicators. We will also provide
+                    additional materials/guidance and, and where possible public outreach campaigns to reach communities
+                    beyond the links provided through grassroots themselves. We will also be looking to record
+                    explanatory, multilingual videos for donors, grassroots and communities - to outline the
+                    functionalities of the platform, the added value for them - as well as communities’ opportunities
+                    for contribution. Communities are encouraged to provide feedback through registering with their
+                    email, phone or social media accounts. However, we of course also want to allow for anonymous
+                    feedback to be allowed. All comments will go through a review process to prevent hate speech or mis-
+                    and disinformation being published, before going live. Grassroots in turn will have the opportunity
+                    to mark a comment as false, which will then go for review by the respective local ambassador and
+                    expert reviewer.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <h2 class="question">What do you mean by a data-driven approach?</h2>
+            <div class="answer">
+                <p>
+                    The platform will help us create a repository of NGO profiles, donors, and other stakeholders. The
+                    data and insights gained into these grassroots, is important data to facilitate donors’ funding
+                    mechanisms, due diligence processes and understanding of grassroots strengths and needs. In
+                    addition, grassroots would find it valuable to know what type of grants are out there, as well as
+                    finding other organisations they could partner with. Combined, this data can be used to arrive at
+                    insights about the sectors and impact of funding local organisations directly, as well as much
+                    needed data on the extent to which aid money is actually being localised.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <h2 class="question">Is TrustRoots a registered entity?</h2>
+            <div class="answer">
+                <p>
+                    We are currently in the process of registering as a legal entity in both India and Germany. In the
+                    meantime we have a fiscal sponsorship agreement with an existing registered partner in the USA who
+                    may act as a guarantor or intermediary where needed. For more questions, do not hesitate to reach
+                    out info@trustrootsnetwork.org
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} {% block script %}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const questions = document.querySelectorAll(".question");
+        questions.forEach((question) => {
+            question.addEventListener("click", function () {
+                const answer = this.nextElementSibling;
+                const isOpen = answer.style.display === "block";
+                // Close other div
+                questions.forEach((q) => {
+                    const a = q.nextElementSibling;
+                    if (a !== answer) {
+                        a.style.display = "none";
+                    }
+                });
+                // Toggle current answer
+                answer.style.display = isOpen ? "none" : "block";
+            });
+        });
+    });
+</script>
+{% endblock %}

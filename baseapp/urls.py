@@ -11,4 +11,5 @@ urlpatterns = [
     path("check-pet-health", views.check_pet_health, name="get_pet_health"),
     path("pet-adoption-status", views.pet_adoption_status, name="pet_adoption_status"),
     path("querytest", views.query_test, name="querytest"),
+    path("faq-page", views.faq_page, name="faq_page"),
 ]

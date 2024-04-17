@@ -74,12 +74,16 @@ def pet_adoption_status(request):
     return render(request, "adoption_status.html")
 
 
-
-
 def query_test(request):
     with connection.cursor() as cursor:
-        cursor.execute("SELECT Pet_Name, Species, Health_Status FROM baseapp_pets WHERE Health_Status <> 'Healthy'")
+        cursor.execute(
+            "SELECT Pet_Name, Species, Health_Status FROM baseapp_pets WHERE Health_Status <> 'Healthy'"
+        )
         res_rows = cursor.fetchall()
         for i in res_rows:
             print(i)
     return render(request, "querytest.html")
+
+
+def faq_page(request):
+    return render(request, "faq.html")
