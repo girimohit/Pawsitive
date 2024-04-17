@@ -84,67 +84,79 @@ who have adopted pets of different genders.''']
 
 
 queryDbms = ['''SELECT u.Location, AVG(p.Age) AS Average_Age
- FROM Users u
- JOIN User_Pets up ON u.UserID = up.UserID
- JOIN Pets p ON up.PetID = p.PetID
- GROUP BY u.Location;''',''' SELECT Pet_Name, Species, Health_Status
+ FROM baseapp_user u
+ JOIN baseapp_User_Pets up ON u.ID = up.UserpetID
+ JOIN baseapp_Pets p ON up.userPetID = p.PetID
+ GROUP BY u.Location;''',
+ ''' SELECT Pet_Name, Species, Health_Status
  FROM Pets
- WHERE Health_Status <> 'Healthy'; ''',''' SELECT p.Species, COUNT(ar.RequestID) AS NumberOfRequests
- FROM Pets p
- JOIN Adoption_Requests ar ON p.PetID = ar.PetID
+ WHERE Health_Status <> 'Healthy'; ''',
+ ''' SELECT p.Species, COUNT(ar.RequestID) AS NumberOfRequests
+ FROM baseapp_Pets p
+ JOIN baseapp_adoption_requests ar ON p.PetID = ar.Pet_id
  GROUP BY p.Species
  ORDER BY NumberOfRequests DESC
- LIMIT 3; ''','''SELECT Species, COUNT(*) AS Total_Count
+ LIMIT 3;
+ ''',
+ '''SELECT Species, COUNT(*) AS Total_Count
  FROM Pets
 GROUP BY Species
  ORDER BY Total_Count DESC
- LIMIT 3; ''','''  SELECT SUM(cp.Likes) AS Total_Likes
- FROM Community_Posts cp
- JOIN Users u ON cp.AuthorID = u.UserID
- JOIN User_Pets up ON u.UserID = up.UserID
- JOIN Pets p ON up.PetID = p.PetID
- WHERE p.Age < 2;''',''' SELECT DISTINCT u.Username
- FROM Users u
- JOIN Adoption_Requests ar ON u.UserID = ar.RequesterID
- JOIN Pets p1 ON ar.PetID = p1.PetID
- JOIN User_Pets up ON u.UserID = up.UserID
- JOIN Pets p2 ON up.PetID = p2.PetID
+ LIMIT 3; ''',
+ '''SELECT SUM(cp.Likes) AS Total_Likes
+ FROM baseapp_community_posts cp
+ JOIN baseapp_user u ON cp.Author_ID = u.ID
+ JOIN baseapp_user_pets up ON u.ID = up.User_ID
+ JOIN baseapp_Pets p ON up.Pet_ID = p.PetID
+ WHERE p.Age < 2;''',
+ '''  SELECT DISTINCT u.Username
+ FROM baseapp_user u
+ JOIN baseapp_adoption_requests ar ON u.ID = ar.Requester_ID
+ JOIN baseapp_Pets p1 ON ar.Pet_ID = p1.PetID
+ JOIN baseapp_user_pets up ON u.ID = up.ID
+ JOIN baseapp_Pets p2 ON up.PetID = p2.PetID
  WHERE p1.Breed = p2.Breed;
-''',''' SELECT p.Species, COUNT(*) AS Total_Adoption_Requests
- FROM Adoption_Requests ar
- JOIN Pets p ON ar.PetID = p.PetID
- GROUP BY p.Species; ''','''  SELECT Actviity_Type, AVG(Happiness_Change) AS Average_Happiness_Change
- FROM Pet_Care_Logs
- GROUP BY Actviity_Type;''','''SELECT *
- FROM Pet_Care_Logs
- WHERE LogID = 3 AND PetID = 3; ''','''SELECT 
-ar.RequestID,
- ar.Approval_Status,
- u.Username AS Requester,
- p.Pet_Name AS Pet
- FROM Adoption_Requests ar
- JOIN Users u ON ar.RequesterID = u.UserID
- JOIN Pets p ON ar.PetID = p.PetID; ''',''' SELECT (COUNT(CASE WHEN p.Happiness_Level > 'Content' THEN 1 END) / COUNT(*)) * 100 
-AS Percentage_Happy_Pets
- FROM Users u
- JOIN Adoption_Requests ar ON u.UserID = ar.RequesterID
- JOIN Pets p ON ar.PetID = p.PetID;''',''' SELECT u.Location, COUNT(cp.PostID) AS Num_Community_Posts
- FROM Users u
- LEFT JOIN Community_Posts cp ON u.UserID = cp.AuthorID
- JOIN User_Pets up ON u.UserID = up.UserID
- JOIN Pets p ON up.PetID = p.PetID
-WHERE p.Age <= 5
- GROUP BY u.Location;''',''' SELECT DISTINCT u.Username
- FROM Users u
- JOIN Adoption_Requests ar ON u.UserID = ar.RequesterID
- JOIN Community_Posts cp ON u.UserID = cp.AuthorID
- WHERE DATE(ar.Request_Date) = DATE(cp.Post_Date); ''',''' SELECT Actviity_Type, AVG(Happiness_Change) AS AvgHappinessChange
- FROM Pet_Care_Logs
- GROUP BY Actviity_Type;''','''SELECT AVG(cp.Comments) AS Average_Comments
- FROM Users u
- JOIN Community_Posts cp ON u.UserID = cp.AuthorID
-JOIN Adoption_Requests ar ON u.UserID = ar.RequesterID
- JOIN Pets p ON ar.PetID = p.PetID
+''',
+'''   SELECT p.Species, COUNT(*) AS Total_Adoption_Requests
+ FROM baseapp_adoption_requests ar
+ JOIN baseapp_Pets p ON ar.Pet_ID = p.PetID
+ GROUP BY p.Species;''',
+ '''   SELECT Actviity_Type, AVG(Happiness_Change) AS Average_Happiness_Change
+ FROM baseapp_pet_care_logs
+ GROUP BY Actviity_Type;''',
+ ''' SELECT *
+ FROM baseapp_pet_care_logs
+ WHERE LogID = 3 AND Pet_ID = 3; ''',
+ '''SELECT ar.RequestID,ar.Approval_Status,u.Username AS Requester,p.Pet_Name AS Pet
+ FROM baseapp_adoption_requests ar
+ JOIN baseapp_user u ON ar.RequesterID = u.UserID
+ JOIN baseapp_pets p ON ar.PetID = p.PetID; ''',
+ '''   SELECT (COUNT(CASE WHEN p.Happiness_Level > 'Content' THEN 1 END) / COUNT(*)) * 100 
+ AS Percentage_Happy_Pets
+ FROM baseapp_user u
+ JOIN baseapp_adoption_requests ar ON u.ID = ar.RequesterID
+ JOIN baseapp_pets p ON ar.Pet_ID = p.PetID;''',
+ ''' SELECT u.Location, COUNT(cp.PostID) AS Num_Community_Posts
+ FROM baseapp_user u
+ LEFT JOIN baseapp_community_posts cp ON u.ID = cp.Author_ID
+ JOIN baseapp_user_pets up ON u.ID = up.User_ID
+ JOIN baseapp_pets p ON up.Pet_ID = p.PetID
+ WHERE p.Age <= 5
+ GROUP BY u.Location;''',
+ '''  SELECT DISTINCT u.Username
+ FROM baseapp_user u
+ JOIN baseapp_adoption_requests ar ON u.ID = ar.RequesterID
+ JOIN baseapp_community_posts cp ON u.ID = cp.Author_ID
+ WHERE DATE(ar.Request_Date) = DATE(cp.Post_Date); ''',
+ '''  
+ SELECT Actviity_Type, AVG(Happiness_Change) AS AvgHappinessChange
+ FROM baseapp_pet_care_logs
+ GROUP BY Actviity_Type;''',
+ '''  SELECT AVG(cp.Comments) AS Average_Comments
+ FROM baseapp_user u
+ JOIN baseapp_community_posts cp ON u.ID = cp.Author_ID
+ JOIN baseapp_adoption_requests ar ON u.ID = ar.Requester_ID
+ JOIN baseapp_pets p ON ar.Pet_ID = p.PetID
  GROUP BY p.Gender;''']
 
 
