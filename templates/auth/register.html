@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block css %}
+<style>
+    /* ----------------------------- FORM PROPERTIES ---------------------------- */
+    #outer-form-div {
+        z-index: 10;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 60%;
+        width: 60%;
+        background-color: rgba(0, 0, 0, 0.527);
+        padding-top: 1vw;
+    }
+
+    #inner-form-div {
+        width: 25%;
+        padding: 1.5%;
+        background-color: #d9d9d9;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 1vw;
+        font-weight: 300;
+    }
+
+    #signup-form,
+    #login-form {
+        color: rgb(255, 255, 255);
+        width: 90%;
+        font-weight: 300;
+        line-height: 1.6vw;
+    }
+
+    #signup-form input:not(#SignUpBtn),
+    #login-form input:not(#SubmitBtn),
+    #signup-form select,
+    #login-form select {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid rgb(255, 255, 255);
+        width: 100%;
+        font-size: 1vw;
+        font-weight: 300;
+        margin: 0.8vw 0;
+        color: rgb(255, 255, 255);
+    }
+
+    #signup-form input:not(#SignUpBtn),
+    #login-form input:not(#SubmitBtn):focus,
+    #signup-form select,
+    #login-form select:focus {
+        outline: none;
+    }
+
+    .submit-btn {
+        background-color: #dbb670;
+        color: #000000;
+        padding: 3% 10%;
+        border: none;
+        width: 60%;
+        border-radius: 10px;
+        font-size: 1vw;
+        font-weight: 400;
+    }
+
+    #signup-form-div {
+        margin: auto;
+        width: 25%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid white;
+        border-radius: 25px;
+        padding: 1.5rem;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div id="signup-form-div">
+    <form method="POST" id="signup-form" class="signup-form hidden" action="{% url 'baseapp:register_user' %}"
+        enctype="multipart/form-data">
+        {% csrf_token %}
+        <!-- <label for="userId">User ID:</label>
+        <input type="text" id="userId" name="userId" required><br> -->
+        <input type="text" id="username" name="username" placeholder="Username" required><br>
+        <input type="email" id="email" name="email" placeholder="Email" required><br>
+        <input type="password" id="password" name="password" placeholder="Password" required><br>
+        <input type="date" id="dob" name="dob" placeholder="Date of Birth" required><br>
+        <input type="text" id="location" name="location" placeholder="Location" required><br>
+        <input type="submit" class="submit-btn" id="SignUpBtn" value="Sign Up" />
+    </form> 
+    <br /><br />
+    <span>
+        <span id="is-account">Already have an Account?</span>
+        <span><a href="{% url 'baseapp:login_user' %}" id="SignUpLink">Login</a> </span>
+    </span>
+</div>
+{% endblock %}
+
+
+{% block script %}
+{% endblock %}
+
+<!-- <script src="{% static 'js/auth_form.js' %}"></script> -->

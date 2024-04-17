@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block css %}
+<!-- tailwindcss -->
+<link href="https://cdn.jsdelivr.net/npm/daisyui@2.6.0/dist/full.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<style>
+    .main-index-div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        /* Set the height of the container to the full viewport height */
+        width: 100%;
+    }
+
+    .text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        background-color: greenyellow;
+        /* Adjust margin as needed */
+    }
+
+
+    .main-div {
+        width: 100%;
+        height: 56rem;
+        background-color: white;
+    }
+
+    #mainhead {
+        margin-bottom: 10%;
+
+    }
+
+    #head-id {
+        padding-top: 5rem;
+        margin-left: 10%;
+        font-size: 4rem;
+    }
+
+    #headimg {
+        margin-left: 60%;
+        margin-top: -25%;
+    }
+
+    footer nav a,
+    footer nav h6 {
+        background-color: transparent;
+    }
+
+    .footer-logo {
+        width: 10rem;
+        mix-blend-mode: lighten;
+    }
+
+    .home-container {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .home-section {
+        text-align: center;
+    }
+
+    .home-section h2 {
+        font-size: 3rem;
+    }
+
+    .home-section p {
+        font-size: 1.5rem;
+    }
+
+
+    .img-text-container {
+        display: flex;
+        align-items: center;
+        /* Center items vertically */
+    }
+
+    #img2 {
+        margin-top: 10%;
+        width: 40%;
+        margin-left: 9%;
+        /* Adjust width as needed */
+        margin-right: 20px;
+        /* Margin between image and text */
+
+    }
+
+    .mytext {
+        flex: 1;
+        /* Take up remaining space */
+        margin-left: 10%;
+        margin-top: 8%;
+
+    }
+
+    #h1txt {
+        font-size: 3rem;
+    }
+</style>
+{% endblock %}
+
+
+{% block body %}
+
+<div class="head-text">
+    <h1 id="head-id"><a class="anchor-btn" style="color:white" href="">Adopt</a><span style="color: rgb(0, 170, 255);">
+            <br>Virtually </span> Help <br> Physically</h1>
+    <p style="margin-left: 10%; font-size: 1.1rem;">Approximately 1478 dogs & cats die every day on road in India.<br>
+        PAWsitive is on a mission to provide every dog and cat a home before 2035.<br>
+        By making you adopt them vitually !!
+</div>
+
+<div class="first-section-image">
+    <img id="headimg" src="{% static 'images/hero_image.svg' %}" alt="home pic ">
+</div>
+
+<div class="home-container" style="margin-top: 5%;">
+    <div class="home-section" style="margin-right: 0.002%">
+        <h2 style="color: aqua;">Search</h2>
+        <p></p>
+    </div>
+    <div class="home-section">
+        <h2 style="color: aqua;">Adopt</h2>
+        <p>Virtually</p>
+    </div>
+    <div class="home-section">
+        <h2 style="color: aqua;">Learn </h2>
+        <p></p>
+    </div>
+</div>
+
+
+
+<div class="spacing" style="margin-top: 8%;"></div>
+
+<footer class="footer p-10 bg-gray-900  text-base-content">
+    <aside class="bg-transparent">
+        <img class="footer-logo" src="{% static 'images/finvizer.svg' %}" alt="">
+        <p class="bg-transparent">ACME Industries Ltd.<br>Providing reliable tech since 1992</p>
+    </aside>
+    <nav class="bg-transparent">
+        <h6 class="footer-title">Services</h6>
+        <a class="link link-hover">Branding</a>
+        <a class="link link-hover">Design</a>
+        <a class="link link-hover">Marketing</a>
+        <a class="link link-hover">Advertisement</a>
+    </nav>
+    <nav class="bg-transparent">
+        <h6 class="footer-title">Company</h6>
+        <a class="link link-hover">About us</a>
+        <a class="link link-hover">Contact</a>
+        <a class="link link-hover">Jobs</a>
+        <a class="link link-hover">Press kit</a>
+    </nav>
+    <nav class="bg-transparent">
+        <h6 class="footer-title">Legal</h6>
+        <a class="link link-hover ">Terms of use</a>
+        <a class="link link-hover ">Privacy policy</a>
+        <a class="link link-hover ">Cookie policy</a>
+    </nav>
+</footer>
+</div>
+
+
+{% endblock body %}
+
+
+<!-- withdrawl option
+dynamic percentage 
+compare expected % -->

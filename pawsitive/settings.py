@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "baseapp",
 ]
 
 MIDDLEWARE = [
@@ -76,7 +77,7 @@ WSGI_APPLICATION = "pawsitive.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "virtualpetadoption",
+        "NAME": "pawsitive",
         "USER": "root",
         "PASSWORD": "root",
         "HOST": "127.0.0.1",
@@ -131,3 +132,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 MEDIA_ROOT = BASE_DIR / "public/media"
 MEDIA_URL = "/media/"
+
+
+AUTH_USER_MODEL = "baseapp.User"

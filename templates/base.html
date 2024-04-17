@@ -7,10 +7,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %} {% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
 
-    <style>
-    </style>
+    <style></style>
     <!-- ---------------------------- CSS BLOCK ----------------------------- -->
     {% block css %} {% endblock %}
 </head>
@@ -20,15 +19,14 @@
 
     <!-- Navbar -->
     <div class="navbar" id="navbar">
-        <a href="{% url 'baseapp:HomePage' %}"><img width="80rem" src="{% static 'images/pawsitive.svg' %}" alt=""></a>
+        <a href="{% url 'baseapp:HomePage' %}"><img width="80rem" src="{% static 'images/pawsitive.svg' %}"
+                alt="" /></a>
         <a href="{% url 'baseapp:HomePage' %}" class="active">Home</a>
         <select class="dropbtn" onchange="navigateToPage(this.value)">
             <option value="" disabled selected>Check</option>
-            <option value="">Pet Health </option>
-            <option value="">Adoption Request Status </option>
+            <option value="{% url 'baseapp:get_pet_health' %}">Pet Health</option>
+            <option value="">Adoption Request Status</option>
         </select>
-
-
 
         <select class="dropbtn" onchange="navigateToPage(this.value)" name="DebtManager" id="debtmanager">
             <option value="" disabled selected>Community</option>
@@ -36,35 +34,27 @@
             <option value="">Post</option>
         </select>
 
-
         <select class="dropbtn" onchange="navigateToPage(this.value)" name="saving sprint" id="saving-sprint"
             class="saving-sprint">
             <option value="" disabled selected>Lets Adopt</option>
 
             <option value="">Adopt</option>
         </select>
-        <a href="javascript:void(0);" class="icon" onclick="toggleNavbar()">
-            &#9776;
-        </a>
+        <a href="javascript:void(0);" class="icon" onclick="toggleNavbar()"> &#9776; </a>
         <a href="" class="active">FAQ</a>
 
         {% if user.is_authenticated %}
         <a class="anchor-btn" href="">{{ request.user.username }}</a>
 
         {% else %}
-        <a class="anchor-btn" href="">Login</a>
+        <a class="anchor-btn" href="{% url 'baseapp:login_user' %}">Login</a>
         {% endif %}
     </div>
 
     <!-- Content -->
-    {% block content %}
-    {% endblock %}
+    {% block content %} {% endblock %}
 
-    <div class="container">
-        {% block body %}
-
-        {% endblock %}
-    </div>
+    <div class="container">{% block body %} {% endblock %}</div>
 
     <!-- ---------------------------- SCRIPT BLOCK ----------------------------- -->
     {% block script %} {% endblock %}
@@ -87,7 +77,6 @@
                 window.location.href = url;
             }
         }
-
     </script>
 </body>
 

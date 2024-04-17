@@ -19,11 +19,13 @@ body {
 .navbar {
     display: flex;
     align-items: center;
-    background-color: transparent;
     /* gap: 5rem; */
     justify-content: space-evenly;
     overflow: hidden;
     max-width: 100%;
+    position: fixed;
+    width: 100%;
+    top: 0;
 
 }
 
@@ -34,6 +36,7 @@ body {
     text-align: center;
     text-decoration: none;
     font-size: 17px;
+    background-color: transparent;
 }
 
 /* .navbar a:hover {
@@ -88,7 +91,7 @@ body {
 
 .container {
 
-    /* margin-top: 3rem; */
+    margin-top: 6rem;
     /* max-width: 1120px; */
     /* padding: 1rem 4rem;   */
     width: 100%;
