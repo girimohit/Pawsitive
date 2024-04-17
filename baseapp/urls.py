@@ -10,4 +10,5 @@ urlpatterns = [
     path("login-user", views.logout_user, name="logout_user"),
     path("check-pet-health", views.check_pet_health, name="get_pet_health"),
     path("pet-adoption-status", views.pet_adoption_status, name="pet_adoption_status"),
+    path("querytest", views.query_test, name="querytest"),
 ]

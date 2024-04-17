@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import login, logout, authenticate
+from django.db import connection
 from baseapp.models import User, Pets, Adoption_Requests
 
 
@@ -71,3 +72,14 @@ def pet_adoption_status(request):
             request, "adoption_status.html", {"adoption_status": adoption_status}
         )
     return render(request, "adoption_status.html")
+
+
+
+
+def query_test(request):
+    with connection.cursor() as cursor:
+        cursor.execute("SELECT Pet_Name, Species, Health_Status FROM baseapp_pets WHERE Health_Status <> 'Healthy'")
+        res_rows = cursor.fetchall()
+        for i in res_rows:
+            print(i)
+    return render(request, "querytest.html")
