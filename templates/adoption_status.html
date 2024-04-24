@@ -96,24 +96,5 @@
 
 
 {% block script %}
-<script>
-    function calculate() {
-        var principal = parseFloat(document.getElementById('principal').value);
-        var annualInterestRate = parseFloat(document.getElementById('annualInterestRate').value);
-        var compoundingPeriods = parseFloat(document.getElementById('compoundingPeriods').value);
-        var years = parseFloat(document.getElementById('years').value);
 
-        // Call the backend to calculate investment returns
-        // For now, we'll just use the logic on the client-side
-        var futureValue = principal * Math.pow(1 + annualInterestRate / (100 * compoundingPeriods), compoundingPeriods * years);
-        var totalInterest = futureValue - principal;
-
-        // Display the result
-        document.getElementById('futureValue').innerHTML = 'Future Value: ₹' + futureValue.toFixed(2);
-        document.getElementById('totalInterest').innerHTML = 'Total Interest Earned: ₹' + totalInterest.toFixed(2);
-
-        // Show the result section
-        document.getElementById('result').style.display = 'block';
-    }
-</script>
 {% endblock %}
