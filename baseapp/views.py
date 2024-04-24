@@ -170,15 +170,8 @@ GROUP BY Species
 def query_test(request):
     answers = []
     for i in range(15):
-        # print(str(queryDbms[i]))
         with connection.cursor() as cursor:
-            cursor.execute(
-                # "SELECT u.Location, AVG(p.Age) AS Average_Age FROM baseapp_user u JOIN baseapp_User_Pets up ON u.ID = up.UserpetID JOIN baseapp_Pets p ON up.userPetID = p.PetID GROUP BY u.Location"
-                # "Select * from baseapp_pets"
-                # str(queryDbms[i])
-                queryDbms[i]
-                # "SELECT Pet_Name, Species, Health_Status FROM baseapp_pets WHERE Health_Status <> 'Healthy'"
-            )
+            cursor.execute(queryDbms[i])
             res_rows = cursor.fetchall()
             print("\n\nCUSTOM QUERIES : ")
             answers.append(res_rows)
@@ -186,9 +179,8 @@ def query_test(request):
                 print(i)
     for i in answers:
         print(i)
-    # print(answers)
-    # return render(request, "querytest.html")
-    return render(request, "faq.html", {"questions": question, "answers": answers})
+    faq_data = [{"question": q, "answer": a} for q, a in zip(question, answers)]
+    return render(request, "faq.html", {"faq_data": faq_data})
 
 
 # def query_test(request):
@@ -203,11 +195,20 @@ def query_test(request):
 
 
 def faq_page(request):
-    return render(request, "faq.html", {"questions": question})
+    answers = []
+    for i in range(15):
+        with connection.cursor() as cursor:
+            cursor.execute(queryDbms[i])
+            res_rows = cursor.fetchall()
+            answers.append(res_rows)
+    faq_data = [{"question": q, "answer": a} for q, a in zip(question, answers)]
+    return render(request, "faq.html", {"faq_data": faq_data})
+    # return render(request, "faq.html", {"questions": question})
 
 
 def pet_adoption_page(request):
     return render(request, "pet_adoption_page.html")
+
 
 def pet_adoption_form(request):
     return render(request, "pet_adoption_form.html")

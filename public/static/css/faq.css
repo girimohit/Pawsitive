@@ -24,10 +24,6 @@
     font-size: 1.4rem;
 }
 
-.faq-container h3,
-.faq-container h1{
-    text-align: center  ;
-}
 
 
 .faq-trn-logo {
@@ -52,12 +48,15 @@
     cursor: pointer;
     background-color: transparent;
     display: flex;
+    font-weight: 300;
 }
 
 .answer {
     color: rgb(23, 23, 23);
     display: none;
     padding: 0.8rem 1.5rem 0.5rem 1rem;
+    font-weight: 300;
+
 }
 
 .answer p {

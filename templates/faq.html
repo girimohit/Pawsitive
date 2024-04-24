@@ -6,12 +6,13 @@
 
 {% block css %}
 <link rel="stylesheet" href="{% static 'css/faq.css' %}">
+
 {% endblock %}
 {% block body %}
 <div class="faq-background">
     <div class="faq-container">
         <img class="faq-trn-logo" src="{% static 'images/trn_logo.png' %}" alt="" />
-        <h1><strong>Frequently Asked Questions</strong></h1>
+        <h1 style="color: white; font-weight: 300;" >Additional Queries</h1>
         <h3>
             Here is everything you ever wanted.
         </h3>
@@ -21,13 +22,12 @@
 <div class="faq-items">
     <div class="faq-container">
 
-        {% for i in questions %}
+        {% for i in faq_data %}
         <div class="faq-item">
-            <h2 class="question"> {{ i }} </h2>
+            <h3 class="question"> {{ i.question }} </h3>
             <div class="answer">
                 <p>
-                    Despite a global aid budget of over 140 billion USD annually, much of this money never actually
-                    reaches local organisations, let alone the communities they serve. 95% of US and 90% of UK´s
+                    {{ i.answer }}
                    
                 </p>
             </div>
