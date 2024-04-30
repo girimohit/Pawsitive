@@ -211,7 +211,16 @@ def pet_adoption_page(request):
 
 
 def pet_adoption_form(request):
+    if request.method == "POST":
+        name = request.POST.get("petName")
+        species = request.POST.get("species")
+        breed = request.POST.get("breed")
+        age = request.POST.get("age")
+        owner = request.user
+        new_pet = Pets(
+            Pet_Name=name, Species=species, Breed=breed, Age=age, Owner=owner
+        )
+        new_pet.save()
+        # return render(request, "pet_adoption_form.html", {"pet": new_pet})
+        return redirect("baseapp:HomePage")
     return render(request, "pet_adoption_form.html")
-
-
-

@@ -14,11 +14,11 @@ class Pets(models.Model):
     Breed = models.CharField(max_length=50)
     Age = models.PositiveIntegerField()
     Gender = models.CharField(max_length=10)
-    Health_Status = models.CharField(max_length=50)
-    Happiness_Level = models.CharField(max_length=50)
-    Hunger_Level = models.CharField(max_length=50)
-    Hygiene_Level = models.CharField(max_length=50)
-    Exercise_Level = models.CharField(max_length=50)
+    Health_Status = models.CharField(max_length=50, default="Healthy")
+    Happiness_Level = models.CharField(max_length=50, default="Happy")
+    Hunger_Level = models.CharField(max_length=50, default="Full")
+    Hygiene_Level = models.CharField(max_length=50, default="clean")
+    Exercise_Level = models.CharField(max_length=50, default="Active")
     Owner = models.ForeignKey(User, on_delete=models.CASCADE)
 
 

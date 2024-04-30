@@ -66,51 +66,22 @@
 {% endblock %} {% block body %}
 <div class="calculator">
   <h2>Pet Information Form</h2>
-  <form method="POST">
+  <form action="{% url 'baseapp:pet_adoption_form' %}" method="POST">
     {% csrf_token %}
-    <input
-      type="text"
-      id="petName"
-      name="petName"
-      placeholder="Pet Name"
-      required
-      maxlength="50"
-    /><br /><br />
+    <input type="text" id="petName" name="petName" placeholder="Pet Name" required maxlength="50" /><br /><br />
 
-    <input
-      type="text"
-      id="species"
-      name="species"
-      required
-      maxlength="50"
-      placeholder="Species"
-    /><br /><br />
+    <input type="text" id="species" name="species" required maxlength="50" placeholder="Species" /><br /><br />
 
-    <input
-      type="text"
-      id="breed"
-      name="breed"
-      required
-      maxlength="50"
-      placeholder="Breed"
-    /><br /><br />
+    <input type="text" id="breed" name="breed" required maxlength="50" placeholder="Breed" /><br /><br />
 
-    <input
-      type="number"
-      id="age"
-      name="age"
-      required
-      min="0"
-      max="999"
-      placeholder="Age"
-    /><br /><br />
+    <input type="number" id="age" name="age" required min="0" max="999" placeholder="Age" /><br /><br />
 
     <!-- <label for="gender">Gender:</label><br> -->
     <select id="gender" name="gender" aria-placeholder="gener" required>
       <option value="male">Male</option>
       <option value="female">Female</option>
-      <option value="other">Other</option></select
-    ><br /><br />
+      <option value="other">Other</option>
+    </select><br /><br />
 
     <button type="submit">Submit</button>
   </form>
