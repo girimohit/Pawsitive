@@ -1,107 +1,123 @@
-{% extends "base.html" %}
-
-{% load static %}
-
-{% block css %}
+{% extends "base.html" %} {% load static %} {% block css %}
 <style>
-    .calculator {
-        background-color: transparent;
-        padding: 35px;
-        border: solid 1px white;
-        border-radius: 8px;
+  .calculator {
+    background-color: transparent;
+    padding: 35px;
+    border: solid 1px white;
+    border-radius: 8px;
 
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        /* max-width: 400px; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* max-width: 400px; */
 
-        /* width: 100%; */
-        max-width: 30%;
-        position: absolute;
-        top: 25%;
-        left: 35%;
-        transform: translateX(-50%, -50%);
+    /* width: 100%; */
+    max-width: 30%;
+    position: absolute;
+    top: 25%;
+    left: 35%;
+    transform: translateX(-50%, -50%);
+  }
 
-    }
+  h2 {
+    text-align: center;
+    color: white;
+  }
 
-    h2 {
-        text-align: center;
-        color: white;
-    }
+  label {
+    font-weight: bold;
+  }
 
-    label {
-        font-weight: bold;
-    }
+  input {
+    width: 95%;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    color: white;
+  }
 
-    input {
-        width: 95%;
-        margin-bottom: 10px;
-        border: none;
-        border-bottom: 1px solid #ccc;
-        color: white;
-    }
+  input::placeholder {
+    color: white;
+  }
 
-    input::placeholder {
-        color: white
-    }
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
 
-    button {
-        width: 100%;
-        padding: 10px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
+  button:hover {
+    background-color: #0056b3;
+  }
 
-    button:hover {
-        background-color: #0056b3;
-    }
+  #investmentForm input {
+    background-color: transparent;
+    color: white;
+  }
 
-    #investmentForm input {
-        background-color: transparent;
-        color: white;
-    }
-
-    #result {
-        color: white;
-    }
+  #result {
+    color: white;
+  }
 </style>
-<link rel="stylesheet" href="{% static 'css/calc.css' %}">
-{% endblock %}
-
-
-{% block body %}
+<link rel="stylesheet" href="{% static 'css/calc.css' %}" />
+{% endblock %} {% block body %}
 <div class="calculator">
-    <h2>Pet Information Form</h2>
-    <form action="submit_pet_info.php" method="POST">
-        <input type="text" id="petName" name="petName" placeholder="Pet Name" required maxlength="50"><br><br>
+  <h2>Pet Information Form</h2>
+  <form method="POST">
+    {% csrf_token %}
+    <input
+      type="text"
+      id="petName"
+      name="petName"
+      placeholder="Pet Name"
+      required
+      maxlength="50"
+    /><br /><br />
 
-        <input type="text" id="species" name="species" required maxlength="50" placeholder="Species"><br><br>
+    <input
+      type="text"
+      id="species"
+      name="species"
+      required
+      maxlength="50"
+      placeholder="Species"
+    /><br /><br />
 
-        <input type="text" id="breed" name="breed" required maxlength="50" placeholder="Breed"><br><br>
+    <input
+      type="text"
+      id="breed"
+      name="breed"
+      required
+      maxlength="50"
+      placeholder="Breed"
+    /><br /><br />
 
-        <input type="number" id="age" name="age" required min="0" max="999" placeholder="Age"><br><br>
+    <input
+      type="number"
+      id="age"
+      name="age"
+      required
+      min="0"
+      max="999"
+      placeholder="Age"
+    /><br /><br />
 
-        <!-- <label for="gender">Gender:</label><br> -->
-        <select id="gender" name="gender" aria-placeholder="gener" required>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-        </select><br><br>
+    <!-- <label for="gender">Gender:</label><br> -->
+    <select id="gender" name="gender" aria-placeholder="gener" required>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option></select
+    ><br /><br />
 
-        <button type="submit">Submit</button>
-    </form>
-    {% if adoption_status %}
-    <div id="result">
-        <p>{{ adoption_status.Approval_Status }}</p>
-    </div>
-    {% endif %}
+    <button type="submit">Submit</button>
+  </form>
+  {% if adoption_status %}
+  <div id="result">
+    <p>{{ adoption_status.Approval_Status }}</p>
+  </div>
+  {% endif %}
 </div>
-{% endblock %}
-
-
-
-{% block script %}
-
-{% endblock %}
+{% endblock %} {% block script %} {% endblock %}

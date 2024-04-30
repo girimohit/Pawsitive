@@ -212,3 +212,6 @@ def pet_adoption_page(request):
 
 def pet_adoption_form(request):
     return render(request, "pet_adoption_form.html")
+
+
+
