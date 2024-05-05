@@ -76,25 +76,20 @@ def pet_adoption_status(request):
 
 question = [
     """What is the average age of pets adopted by users from each location.""",
-    """List pets which are no healthy.""",
-    """Which are the top 3 most popular pet species based on adoption requests""",
-    """Which are the top 3 most common species of pets in the database.""",
-    """What is the total number of likes received on community posts made by users who have 
-adopted pets of age less than 2 years.""",
-    """ List the usernames of users who have made adoption requests for pets of the same breed 
-as their own pets.""",
-    """What is the total number of adoption requests made for each species of pets.""",
+    """Some of the pets which are not healthy ? if any ?""",
+    """What are the most sought-after pet species among adopters?""",
+    """Which pet species are most commonly found in the adoption database?""",
+    """Can I see how many likes users with young adopted pets receive on their posts?""",
+    """Is there a way to see users who have adopted pets of the same breed they already own?""",
+    """How many adoption requests have been made for each type of pet?""",
     """ What is the average change in happiness level of pets after each activity recorded in the pet 
 care logs.""",
-    """ Identify Pet Care Log info with the help of LogID and PetID""",
+    """ How can I access specific care information for my pet?""",
     """What is the current approval status of adoption request""",
-    """ What is the percentage of pets with a happiness level above 'Content' among all pets 
-owned by users who have made adoption requests.""",
-    """ Find the number of community posts made by users from each location, excluding users 
-who have adopted pets older than 5 years.""",
-    """ List the usernames of users who have made both adoption requests and community posts 
-on the same day.""",
-    """ .Find the average happiness change for each type of activity in Pet Care Logs""",
+    """ Is there a way to see the happiness levels of pets owned by adopters?""",
+    """ Can I see how active users are in different locations, excluding those with older adopted pets?""",
+    """ Is there a way to find users who have both requested adoptions and posted on the community forum on the same day?.""",
+    """ Can I see how different care activities impact the happiness of pets on average?""",
     """ What is the average number of comments received on community posts made by users 
 who have adopted pets of different genders.""",
 ]
@@ -209,6 +204,8 @@ def faq_page(request):
 def pet_adoption_page(request):
     return render(request, "pet_adoption_page.html")
 
+def pet_list(request):
+    return render(request, "adoptAnimal.html")
 
 def pet_adoption_form(request):
     if request.method == "POST":
@@ -224,3 +221,20 @@ def pet_adoption_form(request):
         # return render(request, "pet_adoption_form.html", {"pet": new_pet})
         return redirect("baseapp:HomePage")
     return render(request, "pet_adoption_form.html")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

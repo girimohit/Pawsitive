@@ -14,4 +14,5 @@ urlpatterns = [
     path("faq-page", views.faq_page, name="faq_page"),
     path("pet-adoption-page", views.pet_adoption_page, name="pet_adoption_page"),
     path("pet-adoption-form", views.pet_adoption_form, name="pet_adoption_form"),
+    path("pet_list", views.pet_list, name="pet_list"),
 ]

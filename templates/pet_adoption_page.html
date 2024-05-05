@@ -1108,10 +1108,10 @@
                     <!-- ITEM HEADING -->
                     <div class="my-8 flex items-center">
                         <span class="mr-2 text-5xl font-extrabold text-light dark:text-dark">
-                            DOGS
+                            ADOPT HERE 
                             <ul class="mb-8 space-y-4 text-left"></ul>
                             <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400 max-w-[90%]">
-                                <img src="https://media.istockphoto.com/id/1391024014/photo/group-of-cute-dogs-and-cat-sitting-together-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=z_TFPhU3PI7L4Uf1gTI-Zqg4GbO_wOiMv6hrrnYEp00="
+                                <img src="https://i.pinimg.com/736x/57/43/40/5743404f5248f9c26f1e81051513abbc.jpg"
                                     alt="">
                             </p>
                         </span>
@@ -1123,9 +1123,9 @@
 
                     <!-- BUTTON -->
                     {% if user.is_authenticated %}
-                    <a href="{% url 'baseapp:pet_adoption_form' %}"
+                    <a href="{% url 'baseapp:pet_list' %}"
                         class="text-xl dark:text-white text-light font-semibold rounded-lg px-5 py-3 text-center border-2 border-light dark:border-dark mt-auto hover:bg-light dark:hover:bg-dark hover:text-white transition-all duration-500">
-                        Adopt Now
+                        Check List 
                     </a>
 
                     {% else %}
@@ -1150,7 +1150,7 @@
                     <!-- ITEM HEADING -->
                     <div class="my-8 flex items-center">
                         <span class="mr-2 text-5xl font-extrabold text-light dark:text-dark">
-                            CATS
+                            REGISTER A PET 
                             <ul class="mb-8 space-y-4 text-left"></ul>
                             <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400 max-w-[90%]">
                                 <img src="https://t3.ftcdn.net/jpg/06/15/48/68/360_F_615486892_aozUyTfkyojEl6WJ2Gq8GtTvLLOTmHRV.jpg"
@@ -1167,7 +1167,7 @@
                     {% if user.is_authenticated %}
                     <a href="{% url 'baseapp:pet_adoption_form' %}"
                         class="text-xl dark:text-white text-light font-semibold rounded-lg px-5 py-3 text-center border-2 border-light dark:border-dark mt-auto hover:bg-light dark:hover:bg-dark hover:text-white transition-all duration-500">
-                        Adopt Now
+                        Register Here 
                     </a>
 
                     {% else %}
@@ -1186,10 +1186,10 @@
                     <!-- ITEM HEADING -->
                     <div class="my-8 flex items-center">
                         <span class="mr-2 text-5xl font-extrabold text-light dark:text-dark">
-                            OTHERS
+                            FAQs
                             <ul class="mb-8 space-y-4 text-left"></ul>
                             <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400 max-w-[90%]">
-                                <img src="https://i.pinimg.com/originals/dc/98/1c/dc981c2476bf44bea0a352bfa6933af2.jpg"
+                                <img src="https://i.pinimg.com/564x/dc/3c/2e/dc3c2e0c5ccac6f4457bccc63ce695c7.jpg"
                                     alt="other animals ">
                             </p>
                         </span>
@@ -1202,9 +1202,9 @@
 
                     <!-- BUTTON -->
                     {% if user.is_authenticated %}
-                    <a href="{% url 'baseapp:pet_adoption_form' %}"
+                    <a href="{% url 'baseapp:faq_page' %}"
                         class="text-xl dark:text-white text-light font-semibold rounded-lg px-5 py-3 text-center border-2 border-light dark:border-dark mt-auto hover:bg-light dark:hover:bg-dark hover:text-white transition-all duration-500">
-                        Adopt Now
+                        Click Here To Get Answers 
                     </a>
 
                     {% else %}

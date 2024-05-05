@@ -63,3 +63,19 @@ class User_Pets(models.Model):
     User = models.ForeignKey(User, on_delete=models.CASCADE)
     Pet = models.ForeignKey(Pets, on_delete=models.CASCADE)
     Adoption_Date = models.DateField()
+
+
+class list_pets(models.Model):
+    PetID = models.AutoField(primary_key=True)
+    Pet_Name = models.CharField(max_length=50)
+    Species = models.CharField(max_length=50)
+    Breed = models.CharField(max_length=50)
+    Age = models.PositiveIntegerField()
+    Gender = models.CharField(max_length=10)
+    Health_Status = models.CharField(max_length=50, default="Healthy")
+    Happiness_Level = models.CharField(max_length=50, default="Happy")
+    Hunger_Level = models.CharField(max_length=50, default="Full")
+    Hygiene_Level = models.CharField(max_length=50, default="clean")
+    Exercise_Level = models.CharField(max_length=50, default="Active")
+
+    
