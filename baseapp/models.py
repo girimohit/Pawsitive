@@ -77,5 +77,4 @@ class list_pets(models.Model):
     Hunger_Level = models.CharField(max_length=50, default="Full")
     Hygiene_Level = models.CharField(max_length=50, default="clean")
     Exercise_Level = models.CharField(max_length=50, default="Active")
-
-    
+    img_link = models.CharField(max_length=500)

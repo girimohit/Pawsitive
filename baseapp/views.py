@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import login, logout, authenticate
 from django.db import connection
-from baseapp.models import User, Pets, Adoption_Requests
+from baseapp.models import User, Pets, Adoption_Requests, list_pets
 
 
 def home(request):
@@ -204,8 +204,64 @@ def faq_page(request):
 def pet_adoption_page(request):
     return render(request, "pet_adoption_page.html")
 
+
+# def pet_list(request):
+#     unadopted_pets = list_pets.objects.all()
+#     if request.method == "POST":
+#         species = request.POST.get("species")
+#         breed = request.POST.get("breed")
+#         age = request.POST.get("age")
+#         gender = request.POST.get("gender")
+
+#         print(species, breed, age, gender)
+#         if species:
+#             filtered_unadopted_pets = unadopted_pets.filter(Species=species)
+#         if breed:
+#             filtered_unadopted_pets = unadopted_pets.filter(Breed=breed)
+#         if age:
+#             filtered_unadopted_pets = unadopted_pets.filter(Age=age)
+#         if gender:
+#             filtered_unadopted_pets = unadopted_pets.filter(Gender=gender)
+#         return render(
+#             request,
+#             "adoptAnimal.html",
+#             context={"unadopted_pets": filtered_unadopted_pets},
+#         )
+#     return render(
+#         request, "adoptAnimal.html", context={"unadopted_pets": unadopted_pets}
+#     )
+
+
 def pet_list(request):
-    return render(request, "adoptAnimal.html")
+    unadopted_pets = list_pets.objects.all()
+
+    if request.method == "POST":
+        species = request.POST.get("species")
+        breed = request.POST.get("breed")
+        age = request.POST.get("age")
+        gender = request.POST.get("gender")
+        print(species, breed, age, gender)
+        filters = {}
+        if species:
+            filters["Species"] = species
+        if breed:
+            filters["Breed"] = breed
+        if age:
+            filters["Age"] = age
+        if gender:
+            filters["Gender"] = gender
+        filtered_unadopted_pets = unadopted_pets.filter(**filters)
+
+        return render(
+            request,
+            "adoptAnimal.html",
+            context={"unadopted_pets": filtered_unadopted_pets},
+        )
+
+    return render(
+        request, "adoptAnimal.html", context={"unadopted_pets": unadopted_pets}
+    )
+
 
 def pet_adoption_form(request):
     if request.method == "POST":
@@ -221,20 +277,3 @@ def pet_adoption_form(request):
         # return render(request, "pet_adoption_form.html", {"pet": new_pet})
         return redirect("baseapp:HomePage")
     return render(request, "pet_adoption_form.html")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
