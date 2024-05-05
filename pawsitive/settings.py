@@ -77,9 +77,9 @@ WSGI_APPLICATION = "pawsitive.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "pawsitive",
+        "NAME": "paws",
         "USER": "root",
-        "PASSWORD": "root",
+        "PASSWORD": "Squl@boom30",
         "HOST": "127.0.0.1",
         "PORT": "3306",
         "OPTIONS": {"init_command": "SET sql_mode='STRICT_TRANS_TABLES'"},
